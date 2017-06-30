@@ -46,3 +46,9 @@ config/local/**
 
 # files with host data_analysis
 scripts/*.txt
+
+src/META-INF/persistence.xml
+config/feedsucker.properties
+
+db/
+.env

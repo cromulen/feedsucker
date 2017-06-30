@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db:
+    image: bitnami/postgresql:9.6
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./db/data:/bitnami
+    env_file: .env
+    restart: always
+
+  feedsucker:
+    build: .
+    links: 
+      - db
+    depends_on: 
+      - db
+    env_file: .env
+    tty: true
+    stdin_open: true
+    restart: always
