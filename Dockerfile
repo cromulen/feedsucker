@@ -18,7 +18,7 @@ COPY . .
 
 RUN ./build.sh
 
-RUN ./feedsucker.sh LOOP START default_java
+CMD /bin/bash
 
 
 
