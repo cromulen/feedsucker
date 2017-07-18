@@ -11,14 +11,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN easy_install pip
 
-RUN pip install newspaper
+RUN pip install beautifulsoup \
+                newspaper
 
 WORKDIR /app
 COPY . .
 
 RUN ./build.sh
 
-CMD /bin/bash
+RUN curl https://raw.githubusercontent.com/moewe-io/stopwords/master/dist/hr/hr.txt \
+    | tr , '\n' > /usr/local/lib/python2.7/dist-packages/newspaper/resources/text/stopwords-hr.txt
+
+CMD bash
+#CMD java -jar Feedsucker.jar
 
 
 
