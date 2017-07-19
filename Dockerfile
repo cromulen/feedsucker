@@ -22,7 +22,7 @@ RUN ./build.sh
 RUN curl https://raw.githubusercontent.com/moewe-io/stopwords/master/dist/hr/hr.txt \
     | tr , '\n' > /usr/local/lib/python2.7/dist-packages/newspaper/resources/text/stopwords-hr.txt
 
-CMD java -jar Feedsucker.jar
+CMD java -jar Feedsucker.jar > run_output.txt
 
 
 
