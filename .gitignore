@@ -52,3 +52,4 @@ config/feedsucker.properties
 
 db/
 .env
+postgresql_data/

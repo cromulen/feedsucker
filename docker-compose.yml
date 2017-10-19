@@ -1,11 +1,11 @@
-version: '2'
+version: '3'
 services:
   db:
     image: bitnami/postgresql:9.5.3-r6
     ports:
       - '5433:5432'
     volumes:
-      - ./db/data:/bitnami
+      - './postgresql_data:/bitnami/postgresql'
     env_file: .env
     restart: always
 
@@ -19,3 +19,4 @@ services:
     tty: true
     stdin_open: true
     restart: always
+
